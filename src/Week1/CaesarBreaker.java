@@ -42,4 +42,13 @@ public class CaesarBreaker {
         }
         return half.toString();
     }
+
+    public int getKey(String s) {
+        int [] freqs = countLetters(s);
+        int maxDex = maxIndex(freqs);
+        int dkey = maxDex-4;
+        if (dkey < 0) dkey = 26 - (4 - maxDex);
+        return dkey;
+    }
+
 }
